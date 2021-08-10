@@ -1,0 +1,99 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+
+    .buttonMale {
+        background-color: #185adb;
+        border-radius: 12px;
+        color: #ffc947;
+        border: 2px solid #000000;
+        font-size: 18px;
+        padding: 10px 12px;
+        width: 100px;
+       
+    }
+
+        .buttonMale:hover {
+            background-color: #ffc947;
+            color: white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+    .buttonFemale {
+        background-color: #185adb;
+        border-radius: 12px;
+        color: #ffc947;
+        border: 2px solid #000000;
+        font-size: 18px;
+        padding: 10px 12px;
+        width: 100px;
+    }
+
+        .buttonFemale:hover {
+            background-color: deeppink;
+            color: White;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    .buttonDefault {
+        background-color: #185adb;
+        border-radius: 12px;
+        color: #ffc947;
+        border: 2px solid #000000;
+        font-size: 18px;
+        padding: 10px 12px;
+        width: 100px;
+    }
+
+        .buttonDefault:hover {
+            background-color: skyblue;
+            color: White;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+</style>
+<div class="text-center">
+  <h1 class="display-4">Welcome to Invent Fashion</h1>
+            <p>Where fashion meets your creativity</p>
+            <br />
+            <br />
+          
+</div>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+<div class="text-center">
+    <p><h3> Try out own unique and low cost designer dresses </h3></p>
+    <p><h3> Select Gender </h3></p>
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <td><img src="~/images/male_sample.jpg" height="250" width="250" /> </td>
+            <td><img src="~/images/female_sample.jpg" height="250" width="250" /></td>
+        </tr>
+        <tr>
+            <td> <p> <br /><a href="/Male" class="buttonMale">Male</a> </p><br /></td>
+            <td><p> <a href="/Female" class="buttonFemale">Female</a> </p></td>
+        </tr>
+    </table>
+    
+    @*<img src="~/images/logo.png" height="48" width="48"/>
+    <p> <a href="/Female" class="buttonMale">Male</a> </p><br />
+    <p> <a href="/Female" class="buttonFemale">Female</a> </p>*@
+
+</div>
+}
+
+else
+{
+
+<div class="text-center">
+    <p><h5> Order your low cost designer dresses </h5></p>
+    <p><h5> Click login/sign up to start </h5></p>
+    <p> <a href="/Identity/Account/Register" class="buttonDefault">Register</a> </p><br />
+    <p> <a href="/Identity/Account/Login" class="buttonDefault">Login</a> </p>
+    
+</div>
+}
