@@ -8,7 +8,7 @@ namespace Invent_Fashion_API
         public string model { get; set; }
         public string size { get; set; }
         public string color { get; set; }
-        public string Secondarycolor { get; set; }
+        
         public DateTime dateOfHire { get; set; }
 
         public OrderDetail(int orderID, string name, string model, string size, string color, DateTime dateOfHire)

@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sujith_Web_Invent_Fashion.Data;
 
 namespace Invent_Fashion_API
 {
@@ -27,6 +29,10 @@ namespace Invent_Fashion_API
         {
 
             services.AddControllers();
+
+            services.AddDbContext<inventFashionDbContext>(options =>
+                options.UseSqlite(
+                    Configuration.GetConnectionString("InventFashionConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

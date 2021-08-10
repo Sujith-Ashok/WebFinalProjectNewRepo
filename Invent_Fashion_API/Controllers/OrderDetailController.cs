@@ -16,8 +16,6 @@ namespace Invent_Fashion_API.Controllers
             {
             new OrderDetail(1,"Sujith", "Tshirt 10", "M","Red", DateTime.Today),
             new OrderDetail(2, "Ashok", "Pant 8", "s", "Blue", DateTime.Today),
-
-
             new OrderDetail(3, "Dhoni", "shirt 7", "L", "Yellow", DateTime.Today)
 
         };
